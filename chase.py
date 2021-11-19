@@ -3,14 +3,18 @@ from random import randint, choice
 
 lanes = [13, 138, 263, 388, 513]
 
-class Player(GameObject):
+class Chase(GameObject):
   def __init__(self):
-    super(Player, self).__init__(0, 0, 'ara.png')
+    super(Chase, self).__init__(0, 0, 'araSmall.png')
     # dx and dy represent the target position for the player
     self.dx = 93
     self.dy = 93
+    # next position
     self.pos_x = 2
     self.pos_y = 2
+    # curr position to go to
+    self.curr_x = 2
+    self.curr_y = 1
     self.reset()
 
   def left(self):
@@ -37,11 +41,15 @@ class Player(GameObject):
     self.y -= (self.y - self.dy) * 0.25
 
   def reset(self):
-    self.x = lanes[self.pos_x]
-    self.y = lanes[self.pos_y]
+    self.x = lanes[self.curr_x]
+    self.y = lanes[self.curr_y]
     self.dx = self.x
     self.dy = self.y
 
   def update_dx_dy(self):
-    self.dx = lanes[self.pos_x]
-    self.dy = lanes[self.pos_y]
+    self.dx = lanes[self.curr_x]
+    self.dy = lanes[self.curr_y]
+    self.curr_x = self.pos_x
+    # print(self.curr_x)
+    self.curr_y = self.pos_y
+    # print(self.curr_y)

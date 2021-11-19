@@ -2,11 +2,11 @@ from random import randint, choice
 import random 
 from gameObject import GameObject
 
-class Cheese(GameObject):
+class Bomb(GameObject):
     def __init__(self):
         self.positions = [93, 218, 343]
         y = random.choice(self.positions)
-        super(Cheese, self).__init__(0, 0, 'cheese.png')
+        super(Bomb, self).__init__(0, 0, 'chocolate.png')
         self.dx = (randint(0, 200) / 100) + 1
         self.dy = 0
         self.direction = 1
