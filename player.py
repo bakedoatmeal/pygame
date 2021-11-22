@@ -12,6 +12,7 @@ class Player(GameObject):
     self.pos_x = 2
     self.pos_y = 2
     self.reset()
+    self.radius = 0.8
 
   def left(self):
     if self.pos_x > 0:

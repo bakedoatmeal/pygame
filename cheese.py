@@ -29,4 +29,7 @@ class Cheese(GameObject):
             self.x = -64
         else: 
             self.x = 564
+
+    def resetSpeed(self):
+        self.dx = (randint(0, 200) / 100) + 1
         

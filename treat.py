@@ -30,3 +30,5 @@ class Treat(GameObject):
         else: 
             self.y = 564
         
+    def resetSpeed(self):
+        self.dy = (randint(0, 200) / 100) + 1

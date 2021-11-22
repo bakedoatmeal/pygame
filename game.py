@@ -23,13 +23,13 @@ treat = Treat()
 cheese = Cheese()
 ara = Player()
 choc = Bomb()
-moose = Chase()
+#moose = Chase()
 
 clock = pygame.time.Clock()
 all_sprites = pygame.sprite.Group()
 treat_sprites = pygame.sprite.Group()
 
-all_sprites.add(moose)
+#all_sprites.add(moose)
 all_sprites.add(ara)
 all_sprites.add(cheese)
 all_sprites.add(treat)
@@ -50,8 +50,10 @@ while running:
 		# reset or initialize the game objects
         screen.fill((255, 255, 255))
         screen.blit(bg, (0,0))
+        instructions = font.render("Catch the cheese and treats, avoid the chocolate!", True, (255, 255, 255))
+        screen.blit(instructions, (5, 150))
         start_text = font.render("Click to Play!", True, (255, 255, 255))
-        screen.blit(start_text, (100,150))
+        screen.blit(start_text, (100, 250))
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONUP:
                 game_state = 'playing'
@@ -66,16 +68,16 @@ while running:
                     running = False
                 elif event.key == pygame.K_LEFT:
                     ara.left()
-                    moose.left()
+                    #moose.left()
                 elif event.key == pygame.K_RIGHT:
                     ara.right()
-                    moose.right()
+                    #moose.right()
                 elif event.key == pygame.K_UP:
                     ara.up()
-                    moose.up()
+                    #moose.up()
                 elif event.key == pygame.K_DOWN:
                     ara.down()
-                    moose.down()
+                    #moose.down()
                 
         # clear the screen
         screen.fill((255, 255, 255))
@@ -102,8 +104,8 @@ while running:
             #     entity.reset()
             game_state = 'game_over'
 
-    #if pygame.sprite.collide_rect(ara, moose):
-        #running = False
+    # if pygame.sprite.collide_circle(ara, moose):
+    #     running = False
 
     elif game_state == 'game_over':
         screen.fill((255, 255, 255))
@@ -120,6 +122,9 @@ while running:
                 game_state = 'playing'
                 for entity in all_sprites:
                     entity.reset()
+                treat.resetSpeed()
+                choc.resetSpeed()
+                cheese.resetSpeed()
 
 
     # update the display

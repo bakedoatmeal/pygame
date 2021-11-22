@@ -15,6 +15,7 @@ class Chase(GameObject):
     # curr position to go to
     self.curr_x = 2
     self.curr_y = 1
+    self.radius = 1
     self.reset()
 
   def left(self):
