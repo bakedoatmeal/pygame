@@ -6,7 +6,7 @@ class Treat(GameObject):
     def __init__(self):
         self.positions = [93, 218, 343]
         x = random.choice(self.positions)
-        super(Treat, self).__init__(0, 0, 'treat.png')
+        super(Treat, self).__init__(0, 0, './images/treat.png')
         self.dx = 0
         self.dy = (randint(0, 200) / 100) + 1
         self.direction = 0

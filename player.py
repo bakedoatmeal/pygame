@@ -5,7 +5,7 @@ lanes = [13, 138, 263, 388, 513]
 
 class Player(GameObject):
   def __init__(self):
-    super(Player, self).__init__(0, 0, 'ara.png')
+    super(Player, self).__init__(0, 0, './images/ara.png')
     # dx and dy represent the target position for the player
     self.dx = 93
     self.dy = 93

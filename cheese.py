@@ -6,7 +6,7 @@ class Cheese(GameObject):
     def __init__(self):
         self.positions = [93, 218, 343]
         y = random.choice(self.positions)
-        super(Cheese, self).__init__(0, 0, 'cheese.png')
+        super(Cheese, self).__init__(0, 0, './images/cheese.png')
         self.dx = (randint(0, 200) / 100) + 1
         self.dy = 0
         self.direction = 1

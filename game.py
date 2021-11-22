@@ -10,7 +10,7 @@ from random import randint, random
 pygame.init()
 pygame.font.init()
 
-bg = pygame.image.load("./dogespace.jpeg")
+bg = pygame.image.load("./images/dogespace.jpeg")
 
 # Configure the screen by defining height and width
 # returns a screen object
